@@ -1,0 +1,67 @@
+\section{Sets, Elements and Axiom of Extension}
+
+\subsection{What is a set?}
+\indent Informally speaking; students in a classroom, pencils
+in a case and books in a library are all simple examples
+of sets.
+However; in the set theory we do not define the word 
+\textit{set}, because every theory need some elementary concepts.
+
+Let's suppose that we had defined the concept of sets.
+Then; we would need some other concepts, and for defining 
+them, we would need some other concepts and so on...
+
+Since this process cannot goes to infinity, we need some
+elementary concepts that we accept them without any definition.
+In set theory, there are two undefined concepts: One is \textit{set} 
+which is an object and the other one is \textit{belonging} 
+which is a relation between two sets.
+
+If $x$ belongs to $A$, we say $x$ \textit{is an element of} $A$ and write 
+\[ x \in A. \]
+Similarly; if $x$ does not belong to $A$, we say $x$ \textit{is not an element of}
+$A$ and write \[ x \not\in A. \]
+In our notes, just for convenience, we will use small case letters for elements of 
+sets which will be denoted by upper and more complex letters. For example:
+\[x \in A\] and \[A \in \mathcal{F}.\]
+
+\subsection{Subsets}
+If for all $x$; if $x \in A$ then $x \in B$; then we say that $A$ is a \textit{subset} 
+of $B$ and denote with \[A \subseteq B\] or \[B \supseteq A.\]
+Similarly; if $A$ is not a subset of $B$, we say $A$ is not a subset of $B$
+and write \[A \not\subseteq B.\]
+Now, we can prove simple theorems including subsets.
+
+\begin{theorem} Every set is subset of itself. \end{theorem}
+\begin{proof}[Proof]
+   Since every element in $A$ is an element of $A$, $A$ is an subset of $A$. 
+\end{proof}
+
+\begin{theorem} Suppose $A$ is a subset of $B$ and $B$ is a subset 
+of $C$. Then, $A$ is a subset of $C$.\end{theorem}
+\begin{proof}
+    Suppose $x$ is an arbitrary element in A. Since $A \subseteq B$, $x \in B$.
+    And since $B \subseteq C$, $x \in C$. Therefore, $A \subseteq C$
+\end{proof}
+
+\subsection{Set Equality}
+We have defined the concept of subsets. We also need to determine when two sets
+are \textit{equal}. Since equality is a meta-concept, we need an axiom to define equality
+in sets.
+\begin{axiom*}[Axiom of Extension]
+    Two sets are equal if and only if they have the same elements.
+\end{axiom*}
+Or formally, \[\forall A \forall B [A = B \iff \forall x (x \in A \iff x \in B)].\]
+Or simply we can say, \textit{sets are determined by their elements}.
+
+We say that \textit{$A$ is a proper subset of $B$}, if $A$ is a subset of $B$,
+but $A$ and $B$ are not equal; and denote with \[A \subset B.\]
+
+\begin{theorem} Suppose $A$ is a subset of $B$ and $B$ is a subset of $A$.
+Then, A and B are equal. \end{theorem}
+\begin{proof}[Proof]
+    Since $A \subseteq B$, every element in $A$ must be in $B$. And since
+    $B \subseteq A$, every element in $B$ must be in $A$. Thus, they have
+    same elements. Therefore, $A = B$.
+\end{proof}
+

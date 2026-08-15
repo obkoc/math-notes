@@ -1,0 +1,103 @@
+\newpage{}
+\section{Creating Sets}
+
+\subsection{Axiom of Existance}
+We talked about sets and their equality, but we did not officially say 
+there exists a set. However; if we will work with sets, it is crucial.
+
+\begin{center}
+    \textit{There exists a set.}
+\end{center}
+It is a good thing to know that there exists a set, but we do not know 
+anything else. Are there multiple sets or there is a unique one, what are 
+its elements, and can we sure if there is a set, then all subsets of it are 
+also exists?
+
+\subsection{Axiom of Spesification}
+If we want to talk about more sets or create new ones using the existing 
+sets, we need some other axioms. 
+\begin{axiom*}[Axiom of Spesification]
+    Suppose A is a set and S(x) is a sentence. Then, there exists a set 
+    whose elements are in A for which makes S(x) true.
+\end{axiom*}
+Informally speaking, this axiom allows us to create subsets for any 
+existing set. Now, we can prove some elementary facts about set theory.
+
+\begin{theorem}[Empty Set] There exists a set with no elements.\end{theorem}
+\begin{proof}
+    Since we know there exists a set, let $A$ be a set. Let $S(x)$ be the
+    sentence ``$x \not = x$". If we apply \textit{Axiom of Spesification}
+    for $A$ and $S(x)$, the new set must have no elements since it is impossible
+    $for all x$ to ``$x \not = x$". 
+\end{proof}
+
+\begin{theorem} There exists a \textbf{unique} set with no elements. \end{theorem}
+\begin{proof}
+    Since we know there exists a set with no elements, let $\emptyset_1$ and 
+    $\emptyset_2$ be the sets with no elements. According to the 
+    \textit{Axiom of Extension}, if these sets are not equal then there 
+    must be some element in one of them which the other one does not have.
+    But we know that these two sets have no elements. Therefore, they 
+    must be equal.
+\end{proof}
+From now on we will call this set as \textit{empty set} and denote
+with \[\emptyset.\]
+If $A$ is a set and $S(x)$ is a sentence, we know that we can form a set 
+using the \textit{Axiom of Spesification}. Let $B$ be that set.
+From now on, we will use the notation \[B = \{x \in A : S(x)\}\]
+to say $B$ is a set whose elements are in $A$ for which make $S(x)$ true.
+
+\begin{theorem} Empty set is a subset of every set.\end{theorem}
+\begin{proof}
+  Let $A$ be some set. Suppose that $\emptyset$ is not a subset of $A$.
+  Then there exist some $x \in \emptyset $ for which $x \not\in A$.
+  Since $\emptyset$ has no elements, this is impossible. Thus, 
+  $\emptyset \subseteq A$. Since $A$ was an arbitrary set, we can conclude
+  that $\emptyset$ is a subset of every set.
+\end{proof}
+
+\begin{theorem} There are no such set which have all sets as an element.\end{theorem}
+\begin{proof}
+    Let $A$ be some set. Let $B = \{x \in A : x \not\in x\}$. Suppose $x$
+    be an arbitrary element in $A$. We have two cases, either $x \in B$
+    or $x \not\in B$. \underline{\textit{Case 1.}} Suppose $x \in B$.
+    Then, $x \not\in B$, which is a contradiction. \underline{\textit{Case 2.}}
+    Suppose $x \not\in B$. Then, $x$ must be an element of $B$, because it
+    makes the statement true. Contradiction! Since all cases lead us to 
+    a contradiction, our first assumption must be false. Therefore, 
+    $x \not\in A$. Since $A$ and $x$ are arbitrary, for all sets there 
+    exist some element which does not belong to the set.
+\end{proof}
+
+This so-called set was called as \textit{universal set} in early 
+practices of set theory. This type of sets could 
+cause a paradox named \textit{Russell's Paradox}. For more information:
+\url{https://en.wikipedia.org/wiki/Russell's_paradox}
+
+\newpage{}
+
+\subsection{Axiom of Pairing}
+What we know so far is there exists some set and there is an empty one.
+If we want to prove more theorems about sets, we need more axioms.
+For example, if we know that $a_0,a_1,\dots,a_n$ are sets, we want
+to construct the set $A = \{a_0,a_1,\dots,a_n\}.$ We need some axioms
+to achieve this. For start, we will order an axiom to make sure that
+for every set $A$ and $B$, there exists a set which contain both $A$ 
+and $B$.
+
+\begin{axiom*}[Axiom of Pairing] For all sets A and B, there 
+exists a set which contain both $A$ and $B$.\end{axiom*}
+Note that this axiom is not saying this set only contains $A$ and $B$,
+it may have some other unwanted elements. If we apply 
+\textit{Axiom of Spesification} with the sentence $S(x): ``x=a$ or $x=b$",
+we get wanted result. \textit{Axiom of Extension} guaranties its 
+uniqueness.
+
+If $x$ and $y$ are different sets we will write $\{x,y\}$ to imply 
+this is a set which contains only $x$ and $y$ and say this set is 
+\textit{unordered pair} or just \textit{pair} of $x$ and $y$.
+
+Since the axiom does not imply that, we can choose our two sets to be equal.
+In that case, the set which was created by \textit{Axiom of Pairing} have 
+a unique element. Then, we write $\{x\}$ to imply pair of $x$ and $x$ and
+say this set is a \textit{singleton} of $x$.
