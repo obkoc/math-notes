@@ -23,15 +23,15 @@ sets, we need some other axioms.
 Informally speaking, this axiom allows us to create subsets for any 
 existing set. Now, we can prove some elementary facts about set theory.
 
-\begin{theorem}[Empty Set] There exists a set with no elements.\end{theorem}
+\begin{theorem*}[Empty Set] There exists a set with no elements.\end{theorem*}
 \begin{proof}
     Since we know there exists a set, let $A$ be a set. Let $S(x)$ be the
-    sentence ``$x \not = x$". If we apply \textit{Axiom of Spesification}
-    for $A$ and $S(x)$, the new set must have no elements since it is impossible
-    $for all x$ to ``$x \not = x$". 
+    sentence ``$x \not = x$". If we apply the \textit{Axiom of Spesification}
+    for $A$ and $S(x)$, the new set must have no elements since
+    no $x$ satisfies $x \not= x$.
 \end{proof}
 
-\begin{theorem} There exists a \textbf{unique} set with no elements. \end{theorem}
+\begin{theorem*} There exists a \textbf{unique} set with no elements. \end{theorem*}
 \begin{proof}
     Since we know there exists a set with no elements, let $\emptyset_1$ and 
     $\emptyset_2$ be the sets with no elements. According to the 
@@ -47,7 +47,7 @@ using the \textit{Axiom of Spesification}. Let $B$ be that set.
 From now on, we will use the notation \[B = \{x \in A : S(x)\}\]
 to say $B$ is a set whose elements are in $A$ for which make $S(x)$ true.
 
-\begin{theorem} Empty set is a subset of every set.\end{theorem}
+\begin{theorem*} Empty set is a subset of every set.\end{theorem*}
 \begin{proof}
   Let $A$ be some set. Suppose that $\emptyset$ is not a subset of $A$.
   Then there exist some $x \in \emptyset $ for which $x \not\in A$.
@@ -56,25 +56,22 @@ to say $B$ is a set whose elements are in $A$ for which make $S(x)$ true.
   that $\emptyset$ is a subset of every set.
 \end{proof}
 
-\begin{theorem} There are no such set which have all sets as an element.\end{theorem}
+\begin{theorem*} There are no such set which have all sets as an element.\end{theorem*}
 \begin{proof}
-    Let $A$ be some set. Let $B = \{x \in A : x \not\in x\}$. Suppose $x$
-    be an arbitrary element in $A$. We have two cases, either $x \in B$
-    or $x \not\in B$. \underline{\textit{Case 1.}} Suppose $x \in B$.
-    Then, $x \not\in B$, which is a contradiction. \underline{\textit{Case 2.}}
-    Suppose $x \not\in B$. Then, $x$ must be an element of $B$, because it
-    makes the statement true. Contradiction! Since all cases lead us to 
-    a contradiction, our first assumption must be false. Therefore, 
-    $x \not\in A$. Since $A$ and $x$ are arbitrary, for all sets there 
-    exist some element which does not belong to the set.
+    Let $A$ be a set. Using the \textit{Axiom of Spesification} we can
+    construct the set $B = \{x \in A : x \notin x\}$. Since $B \in B$ lead 
+    us to $B \notin B$, which is a contradiction, $B \notin B$.
+    Then, either $B \notin A$ or $B \in B$ (negation of $x \notin x$ for B). 
+    Since the latter is impossible, $B \notin A$. $A$ was an arbitrary set.
+    Therefore; for all sets, there exists a set which does not belong 
+    to the set. Hence, no set can contain all sets.
 \end{proof}
 
-This so-called set was called as \textit{universal set} in early 
-practices of set theory. This type of sets could 
-cause a paradox named \textit{Russell's Paradox}. For more information:
-\url{https://en.wikipedia.org/wiki/Russell's_paradox}
+This so-called set (a set that contains everything) was called as
+\textit{universal set} in early practices of set theory.
+This type of sets could cause a paradox named \textit{Russell's Paradox}.
+For more information: \url{https://en.wikipedia.org/wiki/Russell's_paradox}
 
-\newpage{}
 
 \subsection{Axiom of Pairing}
 What we know so far is there exists some set and there is an empty one.
@@ -89,7 +86,7 @@ and $B$.
 exists a set which contain both $A$ and $B$.\end{axiom*}
 Note that this axiom is not saying this set only contains $A$ and $B$,
 it may have some other unwanted elements. If we apply 
-\textit{Axiom of Spesification} with the sentence $S(x): ``x=a$ or $x=b$",
+\textit{Axiom of Spesification} with the sentence $S(x): ``x=A$ or $x=B$",
 we get wanted result. \textit{Axiom of Extension} guaranties its 
 uniqueness.
 
@@ -101,3 +98,70 @@ Since the axiom does not imply that, we can choose our two sets to be equal.
 In that case, the set which was created by \textit{Axiom of Pairing} have 
 a unique element. Then, we write $\{x\}$ to imply pair of $x$ and $x$ and
 say this set is a \textit{singleton} of $x$.
+
+\subsection{Unions and Intersections}
+Suppose that $A$ and $B$ are sets. Naturally, we want to unite the 
+elements of $A$ and $B$ into a single set.
+Since we cannot construct a set based on the axioms we have,
+we need some other axioms.
+
+\begin{axiom*}[Axiom of Unions] Suppose that $\mathcal{C}$ is a collection of sets.
+\footnote{Actually; everything in the set theory are sets, but if we 
+want to emphasise that we will use some properties of sets in some set,
+we say \textit{collection of sets} instead ``set of sets". Thus,
+this is purely for readability, not because collections and sets are different 
+type of objects.} Then, there
+exists a set which contains all $x$ for which, $x$ is in at least one element 
+of $\mathcal{C}$.\end{axiom*}
+
+Since \textit{Axiom of Unions} says \textit{``which contains"} instead of 
+\textit{``only contains"}, sets that are created with \textit{Axiom of Unions}
+may have unwanted elements (there are no sets in $\mathcal{C}$ which contains them).
+If we use the \textit{Axiom of Spesification}, we can specify the elements 
+that are in at least one set in $\mathcal{C}$.
+
+Let $\mathcal{C}$ be a collection of sets. According to the 
+\textit{Axiom of Unions} there exists a set $\mathcal{U}$ which have 
+all $x$ in at least one set in $\mathcal{C}$. 
+Then, $\cup \mathcal{C} = \{x \in \mathcal{U} : 
+\text{for some A in } \mathcal{C} \text{ , } x \in A\}$
+will be the set whose elements are in some set in $\mathcal{C}$. Similarly,
+we can say that if $x \in A$ for some $A \in \mathcal{C}$, then $x \in \cup \mathcal{C}$.
+This set $\cup \mathcal{C}$ is called the union of the collection $\mathcal{C}$
+of sets, and the \textit{Axiom of Extension} guaranties its uniqueness.
+
+% Will reformat here
+Instead of $\cup \mathcal{C}$, some mathematicians use 
+\begin{align*}
+ \cup \{ X : X \in \mathcal{C} \}   
+\end{align*}
+or
+\begin{align*}
+  \cup_{X\in\mathcal{C}} X.
+\end{align*}
+
+\begin{theorem*}$\cup{\emptyset} = \emptyset$.\end{theorem*}
+\begin{proof}
+    Suppose that $x \in \cup \emptyset$. Then, for some $A \in \emptyset$,
+    $x \in A$. But, it is impossible to $A \in \emptyset$. Thus, 
+    $\cup{\emptyset} = \emptyset$.
+\end{proof}
+
+\begin{theorem*}$\cup \{A\} = A$.\end{theorem*}
+\begin{proof}
+    $(\subseteq)$ Let $x \in \cup\{A\}$. Then, for some $X \in \{A\}$,
+    $x \in X$. Since $\{A\}$ have a unique element namely $A$,
+    $x \in A$. Thus, $\cup\{A\} \subseteq A$.
+   
+    $(\supseteq)$ Let $x \in A$. Since $A \in \{A\}$, $x \in \cup\{A\}$.
+    Thus, $A \subseteq \cup\{A\}$. 
+    
+    Since $\cup\{A\} \subseteq A$ and $A \subseteq \cup\{A\}$, 
+    $\cup\{A\} = A$.
+\end{proof}
+
+\newpage{}
+
+\begin{definition*}
+   $A \cup B := \cup\{A,B\}$. 
+\end{definition*}
