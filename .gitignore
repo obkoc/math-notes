@@ -1,1 +1,4 @@
 **/.latex_temp/
+**/build/
+*.synctex.gz
+*.synctex(busy)
